@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="fixed_block">
+        <input type="checkbox" name="one_checkbox" id="one_checkbox" />
+        <label for="one_checkbox">Запустить</label>
+
+        <div class="text">
+            Первый пошел
+        </div>
+        <div class="text">
+            посчитать количество символов в этом блоке
+        </div>
+        <div class="text">
+            Третий пошел
+        </div>
+        
+        <div id="result"></div>
+    </div>
+    
+    <!-- При включении чекбокса - подсчитать количество символов во втором блоке с классом .text -->
+
+    <script>
+        let c = document.querySelector('#one_checkbox');
+        c.onclick = function () {
+            if (c.checked) {
+                const text = document.querySelectorAll(".text");
+                console.log(text[1].innerText.length);
+                // console.log(text[1].textContent.length); 
+            }
+        }
+    </script>
+</body>
+</html>
